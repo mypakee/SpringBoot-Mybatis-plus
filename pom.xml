@@ -50,7 +50,7 @@
             <scope>compile</scope>
         </dependency>
     </dependencies>
-
+<!--添加注释-->
     <build>
         <plugins>
             <plugin>
