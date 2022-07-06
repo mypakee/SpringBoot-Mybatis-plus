@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springbootmybatisplus.mapper.BookMapper">
+    <select id="selectMapById" resultType="map">
+        select * from t_book where uid = #{id}
+    </select>
+    <select id="selectNameAndTypeAndDescriptionById" resultType="com.example.springbootmybatisplus.pojo.Book">
+        select name, type, description
+        from t_book
+        where uid = #{id,jdbcType=NUMERIC}
+    </select>
+    <select id="selectNameAndDescriptionByIdAfter" resultType="com.example.springbootmybatisplus.pojo.Book">
+        select name, description
+        from t_book
+        where uid > #{id,jdbcType=NUMERIC}
+    </select>
+</mapper>
